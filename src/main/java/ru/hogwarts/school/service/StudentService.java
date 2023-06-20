@@ -21,6 +21,10 @@ public class StudentService {
         return students.get(id);
     }
 
+    public Student findStudentByAge(int age) {
+        return students.get(age);
+    }
+
     public Student editStudent(Student student) {
         if (students.containsKey(student.getId())) {
             students.put(student.getId(), student);

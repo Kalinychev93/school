@@ -25,7 +25,16 @@ public class StudentController {
         return ResponseEntity.ok(student);
     }
 
-    @GetMapping
+    @GetMapping(path = "{age}") // GET http://localhost:8080/student/age10
+    public ResponseEntity<Student> getStudent(@PathVariable int age) {
+        Student studentByAge =  studentService.findStudentByAge(age);
+        if(studentByAge == null){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
+        return ResponseEntity.ok(studentByAge);
+    }
+
+    @GetMapping // GET http://localhost:8080/student
     public ResponseEntity<Collection<Student>> getAllStudents(){
         return ResponseEntity.ok(studentService.getAllStudents());
     }
