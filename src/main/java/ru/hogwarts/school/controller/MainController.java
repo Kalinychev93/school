@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class MainController {
     @GetMapping
     public String showGreetings(){
-        return "WebApp is working";
+        return "Welcome to Hogwarts";
     }
 }
