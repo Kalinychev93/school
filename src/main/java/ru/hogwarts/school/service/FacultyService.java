@@ -1,6 +1,7 @@
 package ru.hogwarts.school.service;
 
 import ru.hogwarts.school.model.Faculty;
+import ru.hogwarts.school.model.Student;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -30,4 +31,7 @@ public class FacultyService {
         return faculties.remove(id);
     }
 
+    public Collection<Faculty> getAllFaculties() {
+        return faculties.values();
+    }
 }
